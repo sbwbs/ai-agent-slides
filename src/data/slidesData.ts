@@ -11,14 +11,16 @@ export const sessions: Session[] = [
         type: 'title',
         title: 'LLMs and AI Agents',
         subtitle: 'Past, Present, and Future',
-        content: 'My Journey and Insights'
+        content: 'My Journey and Insights',
+        icon: 'Sparkles'
       },
       {
         id: 1,
         type: 'section',
         title: 'Session Overview',
         sessionNumber: 0,
-        sessionTitle: 'What We\'ll Cover Today'
+        sessionTitle: 'What We\'ll Cover Today',
+        icon: 'Presentation'
       },
       {
         id: 2,
@@ -29,7 +31,8 @@ export const sessions: Session[] = [
           'Experimentation & Applied Work: Building AI agents, workflow design, and my project at SendBird',
           'LLMs Today – Tech & Impact: How LLMs work, new protocols (MCP, A2A), and their impact on education and work',
           'Future & Key Takeaways: The agentic ecosystem ahead, and lessons on continuous learning'
-        ]
+        ],
+        icon: 'MapIcon'
       }
     ]
   },
@@ -44,7 +47,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Foundations of AI and LLMs',
         sessionNumber: 1,
-        sessionTitle: 'Core Principles'
+        sessionTitle: 'Core Principles',
+        icon: 'Brain'
       },
       {
         id: 4,
@@ -55,7 +59,8 @@ export const sessions: Session[] = [
           'Machine Learning (ML): A subset that uses data to improve at tasks without explicit programming',
           'Deep Learning: Uses neural networks inspired by the brain to find patterns in large data'
         ],
-        highlight: 'AI → ML → Deep Learning: Each is a subset of the previous'
+        highlight: 'AI → ML → Deep Learning: Each is a subset of the previous',
+        icon: 'Layers'
       },
       {
         id: 5,
@@ -66,7 +71,8 @@ export const sessions: Session[] = [
           'Large Language Model (LLM): Trained on massive text datasets to predict the next word',
           'Enables human-like text generation – essentially a super-advanced autocomplete',
           'Has learned grammar, facts, and reasoning patterns from billions of words'
-        ]
+        ],
+        icon: 'MessagesSquare'
       },
       {
         id: 6,
@@ -85,7 +91,8 @@ export const sessions: Session[] = [
           'Don\'t "know" facts like humans do',
           'Statistically generate likely answers',
           'Can produce hallucinations (incorrect/nonsensical outputs)'
-        ]
+        ],
+        icon: 'Scale'
       }
     ]
   },
@@ -100,7 +107,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Early AI: From ELIZA to Now',
         sessionNumber: 2,
-        sessionTitle: 'Past Perspective'
+        sessionTitle: 'Past Perspective',
+        icon: 'History'
       },
       {
         id: 8,
@@ -113,14 +121,16 @@ export const sessions: Session[] = [
           '2022: ChatGPT released – AI captured mainstream attention',
           'Global interest in "Generative AI" surged dramatically'
         ],
-        highlight: 'From simple scripts to fluid, human-like dialogue'
+        highlight: 'From simple scripts to fluid, human-like dialogue',
+        icon: 'Clock'
       },
       {
         id: 9,
         type: 'section',
         title: 'My Early Journey in LLMs',
         sessionNumber: 2,
-        sessionTitle: 'Personal Story'
+        sessionTitle: 'Personal Story',
+        icon: 'Rocket'
       },
       {
         id: 10,
@@ -132,7 +142,8 @@ export const sessions: Session[] = [
           'Pushed models with creative prompts to discover limits',
           'Both amazed and skeptical at the same time'
         ],
-        highlight: 'The first time I got a coherent response felt like magic'
+        highlight: 'The first time I got a coherent response felt like magic',
+        icon: 'FlaskConical'
       },
       {
         id: 11,
@@ -144,7 +155,8 @@ export const sessions: Session[] = [
           'First successful web search + answer integration felt like witnessing the future',
           'Early experiments were clunky but showed incredible potential'
         ],
-        highlight: 'Combining reasoning with action is incredibly powerful'
+        highlight: 'Combining reasoning with action is incredibly powerful',
+        icon: 'Bot'
       },
       {
         id: 12,
@@ -156,7 +168,8 @@ export const sessions: Session[] = [
           'Structured prompts to carry information between steps',
           'Manual version of what tools like LangChain automate today'
         ],
-        highlight: 'Like assembling lego blocks of intelligence'
+        highlight: 'Like assembling lego blocks of intelligence',
+        icon: 'Workflow'
       }
     ]
   },
@@ -171,7 +184,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Applied Work at SendBird',
         sessionNumber: 3,
-        sessionTitle: 'Building an AI Chatbot'
+        sessionTitle: 'Building an AI Chatbot',
+        icon: 'MessageSquare'
       },
       {
         id: 14,
@@ -183,7 +197,8 @@ export const sessions: Session[] = [
           'Company Knowledge Base: Fed proprietary data (FAQs, guides, policies)',
           'No-Code Solution: Non-developers could deploy custom chatbots',
           'Upload files or point to URLs – system incorporates into AI knowledge'
-        ]
+        ],
+        icon: 'BotMessageSquare'
       },
       {
         id: 15,
@@ -195,7 +210,8 @@ export const sessions: Session[] = [
           'Answers are fluent AND accurate to our domain',
           'Tailored responses specific to SendBird products'
         ],
-        highlight: 'First-party data grounding was crucial for accuracy'
+        highlight: 'First-party data grounding was crucial for accuracy',
+        icon: 'FileCheck'
       },
       {
         id: 16,
@@ -214,7 +230,8 @@ export const sessions: Session[] = [
           'Source citations in responses',
           'Links to documentation pages',
           'Transparency builds trust'
-        ]
+        ],
+        icon: 'ShieldCheck'
       },
       {
         id: 17,
@@ -227,7 +244,8 @@ export const sessions: Session[] = [
           'Align AI with company voice and facts',
           'Human element is crucial for success'
         ],
-        highlight: 'Seeing the system handle real support questions autonomously was surreal'
+        highlight: 'Seeing the system handle real support questions autonomously was surreal',
+        icon: 'Lightbulb'
       }
     ]
   },
@@ -242,7 +260,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'How LLMs Work',
         sessionNumber: 4,
-        sessionTitle: 'Technical Angle, Simplified'
+        sessionTitle: 'Technical Angle, Simplified',
+        icon: 'Cpu'
       },
       {
         id: 19,
@@ -254,7 +273,8 @@ export const sessions: Session[] = [
           'Picks up linguistic patterns, facts, and reasoning abilities',
           'Knowledge is frozen to training data – no automatic updates',
           'Doesn\'t know events after training cut-off'
-        ]
+        ],
+        icon: 'GraduationCap'
       },
       {
         id: 20,
@@ -267,7 +287,8 @@ export const sessions: Session[] = [
           'Can do things never explicitly trained for',
           'Even researchers aren\'t always sure how answers are derived'
         ],
-        highlight: 'Both amazing and a bit scary'
+        highlight: 'Both amazing and a bit scary',
+        icon: 'Box'
       },
       {
         id: 21,
@@ -280,7 +301,8 @@ export const sessions: Session[] = [
           'Context length limits (few thousand words typically)',
           'May lose track of earlier details in long conversations'
         ],
-        highlight: 'These limitations drive the need for augmentation techniques'
+        highlight: 'These limitations drive the need for augmentation techniques',
+        icon: 'AlertCircle'
       }
     ]
   },
@@ -295,7 +317,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Augmenting LLMs',
         sessionNumber: 5,
-        sessionTitle: 'Vectors and Memory'
+        sessionTitle: 'Vectors and Memory',
+        icon: 'Database'
       },
       {
         id: 23,
@@ -307,7 +330,8 @@ export const sessions: Session[] = [
           'Core technology: Vector embeddings',
           'Essentially an "open-book exam" for the AI',
           'Combines LLM fluency with database reliability'
-        ]
+        ],
+        icon: 'BookOpen'
       },
       {
         id: 24,
@@ -320,7 +344,8 @@ export const sessions: Session[] = [
           'Encodes meaning and context, not just spelling',
           'Generated using specialized language models'
         ],
-        highlight: 'Turning text into meaning you can measure'
+        highlight: 'Turning text into meaning you can measure',
+        icon: 'Binary'
       },
       {
         id: 25,
@@ -332,7 +357,8 @@ export const sessions: Session[] = [
           'Like a librarian that searches by meaning, not keywords',
           'Can find "pricing policies" when asked "How much does it cost?"',
           'Understands concepts, not just exact words'
-        ]
+        ],
+        icon: 'Search'
       },
       {
         id: 26,
@@ -345,7 +371,8 @@ export const sessions: Session[] = [
           'Dramatically improves factual accuracy',
           'Extends model knowledge beyond training data'
         ],
-        highlight: 'This is how SendBird bot knew latest product details'
+        highlight: 'This is how SendBird bot knew latest product details',
+        icon: 'Link'
       }
     ]
   },
@@ -360,7 +387,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Extending LLMs',
         sessionNumber: 6,
-        sessionTitle: 'Tools and Agents'
+        sessionTitle: 'Tools and Agents',
+        icon: 'Wrench'
       },
       {
         id: 28,
@@ -379,7 +407,8 @@ export const sessions: Session[] = [
           'Affect external systems',
           'API calls and queries',
           'Real-time data access'
-        ]
+        ],
+        icon: 'Settings'
       },
       {
         id: 29,
@@ -391,7 +420,8 @@ export const sessions: Session[] = [
           'LLM output triggers functions in the system',
           'Transforms AI from content generator to task executor'
         ],
-        highlight: 'Text + Action = Much more useful AI'
+        highlight: 'Text + Action = Much more useful AI',
+        icon: 'Zap'
       },
       {
         id: 30,
@@ -405,7 +435,8 @@ export const sessions: Session[] = [
           'Vendor-neutral and secure',
           'Any AI can plug into any MCP-compatible tool'
         ],
-        highlight: 'Like HTTP for AI-tool communication'
+        highlight: 'Like HTTP for AI-tool communication',
+        icon: 'Plug'
       },
       {
         id: 31,
@@ -419,7 +450,8 @@ export const sessions: Session[] = [
           'Standard for secure inter-agent communication',
           'Built on HTTP/JSON for ease of integration'
         ],
-        highlight: 'Building networks of collaborative AI'
+        highlight: 'Building networks of collaborative AI',
+        icon: 'Network'
       },
       {
         id: 32,
@@ -432,7 +464,8 @@ export const sessions: Session[] = [
           'Scaling from one chatbot to an AI team',
           'Challenge: Coherent, secure, aligned multi-agent systems'
         ],
-        highlight: 'We are at the dawn of AI ecosystems'
+        highlight: 'We are at the dawn of AI ecosystems',
+        icon: 'GitBranch'
       }
     ]
   },
@@ -447,7 +480,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'LLMs in Education',
         sessionNumber: 7,
-        sessionTitle: 'Impact on Learning and Teaching'
+        sessionTitle: 'Impact on Learning and Teaching',
+        icon: 'School'
       },
       {
         id: 34,
@@ -459,7 +493,8 @@ export const sessions: Session[] = [
           'Uses: Research, explanations, brainstorming, essay outlines',
           'Becoming like a new calculator or Google'
         ],
-        highlight: 'Two in three students now use ChatGPT'
+        highlight: 'Two in three students now use ChatGPT',
+        icon: 'Users'
       },
       {
         id: 35,
@@ -480,7 +515,8 @@ export const sessions: Session[] = [
           'Help with brainstorming',
           'Support for struggling students',
           'Free up teacher time'
-        ]
+        ],
+        icon: 'Swords'
       },
       {
         id: 36,
@@ -493,7 +529,8 @@ export const sessions: Session[] = [
           'Rest were unsure or saw mixed effects',
           'Concerns: Over-reliance, inaccurate info, ethics',
           'Potential: Grading assistance, lesson planning, personalized learning'
-        ]
+        ],
+        icon: 'UserCheck'
       },
       {
         id: 37,
@@ -506,7 +543,8 @@ export const sessions: Session[] = [
           'Document AI use and critique outputs',
           'Prepare students for AI-ubiquitous workforce'
         ],
-        highlight: 'AI isn\'t going away – manage it thoughtfully'
+        highlight: 'AI isn\'t going away – manage it thoughtfully',
+        icon: 'BookOpenCheck'
       }
     ]
   },
@@ -521,7 +559,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'LLMs in the Workplace',
         sessionNumber: 8,
-        sessionTitle: 'Changing How We Work'
+        sessionTitle: 'Changing How We Work',
+        icon: 'Briefcase'
       },
       {
         id: 39,
@@ -534,7 +573,8 @@ export const sessions: Session[] = [
           'Uses: Writing emails, reports, code, marketing, data analysis',
           'Released late 2022 → majority adoption in 2 years'
         ],
-        highlight: 'Each knowledge worker now has a junior assistant'
+        highlight: 'Each knowledge worker now has a junior assistant',
+        icon: 'Building'
       },
       {
         id: 40,
@@ -547,7 +587,8 @@ export const sessions: Session[] = [
           'Saves time AND produces better results',
           'Weaker writers benefited most',
           'Acts as an equalizer in certain skills'
-        ]
+        ],
+        icon: 'TrendingUp'
       },
       {
         id: 41,
@@ -560,7 +601,8 @@ export const sessions: Session[] = [
           'Jobs shift toward supervision and creative judgment',
           'Support agents handle complex cases, AI handles FAQs'
         ],
-        highlight: 'Augmenting roles rather than replacing them'
+        highlight: 'Augmenting roles rather than replacing them',
+        icon: 'Users2'
       },
       {
         id: 42,
@@ -581,7 +623,8 @@ export const sessions: Session[] = [
           'Review processes',
           'Strategic AI use guidelines',
           'Balance automation with skills'
-        ]
+        ],
+        icon: 'ShieldAlert'
       },
       {
         id: 43,
@@ -594,7 +637,8 @@ export const sessions: Session[] = [
           'Demand for domain expertise + AI skills',
           'Human creativity, strategy, and interpersonal skills more defining'
         ],
-        highlight: 'Professionals who combine expertise with AI will be in high demand'
+        highlight: 'Professionals who combine expertise with AI will be in high demand',
+        icon: 'Target'
       }
     ]
   },
@@ -609,7 +653,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'What Lies Ahead',
         sessionNumber: 9,
-        sessionTitle: 'The Future of LLMs and Generative AI'
+        sessionTitle: 'The Future of LLMs and Generative AI',
+        icon: 'Telescope'
       },
       {
         id: 45,
@@ -621,7 +666,8 @@ export const sessions: Session[] = [
           'Multimodal understanding and better reasoning',
           'Fewer errors, more nuanced understanding',
           'Exploration of new architectures beyond simple scaling'
-        ]
+        ],
+        icon: 'Gauge'
       },
       {
         id: 46,
@@ -634,7 +680,8 @@ export const sessions: Session[] = [
           'Integration through AR glasses, voice assistants',
           'True smart assistant across all modalities'
         ],
-        highlight: 'Not confined to chat boxes anymore'
+        highlight: 'Not confined to chat boxes anymore',
+        icon: 'MonitorSmartphone'
       },
       {
         id: 47,
@@ -647,7 +694,8 @@ export const sessions: Session[] = [
           'Challenge: Orchestration and reliable cooperation',
           'New field: AI Operations (AI Ops)'
         ],
-        highlight: 'Managing fleets of AI workers'
+        highlight: 'Managing fleets of AI workers',
+        icon: 'Globe'
       },
       {
         id: 48,
@@ -659,7 +707,8 @@ export const sessions: Session[] = [
           'Job automation decisions',
           'AI regulations and transparency requirements',
           'Labeling AI-generated content to prevent misinformation'
-        ]
+        ],
+        icon: 'Scale3d'
       },
       {
         id: 49,
@@ -672,7 +721,8 @@ export const sessions: Session[] = [
           'AI tutor for every child',
           'Your generation steers these developments'
         ],
-        highlight: 'AI should amplify human potential, not undermine it'
+        highlight: 'AI should amplify human potential, not undermine it',
+        icon: 'HeartHandshake'
       },
       {
         id: 50,
@@ -691,7 +741,8 @@ export const sessions: Session[] = [
           'Embrace curiosity and flexibility',
           'Be ready to be a beginner again'
         ],
-        highlight: 'Adaptability is the superpower of the 21st century'
+        highlight: 'Adaptability is the superpower of the 21st century',
+        icon: 'RefreshCw'
       }
     ]
   },
@@ -706,7 +757,8 @@ export const sessions: Session[] = [
         type: 'section',
         title: 'Key Takeaways and Advice',
         sessionNumber: 10,
-        sessionTitle: 'Lessons for the Journey Ahead'
+        sessionTitle: 'Lessons for the Journey Ahead',
+        icon: 'Compass'
       },
       {
         id: 53,
@@ -718,7 +770,8 @@ export const sessions: Session[] = [
           'Master the basics – they are the bedrock',
           'Critically evaluate new tools with strong foundation',
           'Understanding why helps design better solutions'
-        ]
+        ],
+        icon: 'Anchor'
       },
       {
         id: 54,
@@ -730,7 +783,8 @@ export const sessions: Session[] = [
           'Each step should stretch you, not overwhelm you',
           'Celebrate small wins – progress compounds',
           'Consistent incremental learning beats sporadic big leaps'
-        ]
+        ],
+        icon: 'TrendingUp'
       },
       {
         id: 55,
@@ -743,7 +797,8 @@ export const sessions: Session[] = [
           'Barrier to entry is lower than ever (free tiers, university resources)',
           'Be willing to tinker and experiment'
         ],
-        highlight: 'Get your hands dirty'
+        highlight: 'Get your hands dirty',
+        icon: 'Hammer'
       },
       {
         id: 56,
@@ -755,7 +810,8 @@ export const sessions: Session[] = [
           'Join communities and forums',
           'Share experiments and learn from others',
           'Cultivate broad curiosity – interdisciplinary ideas spark innovation'
-        ]
+        ],
+        icon: 'Sparkles'
       },
       {
         id: 57,
@@ -767,7 +823,8 @@ export const sessions: Session[] = [
           'View as evolution, not setback',
           'Flexibility over attachment to "how things were done"',
           'Liberating to embrace the new and be a beginner again'
-        ]
+        ],
+        icon: 'RotateCcw'
       },
       {
         id: 58,
@@ -780,7 +837,8 @@ export const sessions: Session[] = [
           'If business: improve experience respectfully',
           'Guide AI usage toward positive outcomes'
         ],
-        highlight: 'Remember the why'
+        highlight: 'Remember the why',
+        icon: 'Heart'
       },
       {
         id: 59,
@@ -792,7 +850,8 @@ export const sessions: Session[] = [
           'The journey is continuous',
           'Experiment boldly, learn from failures, share insights',
           'Remain adaptable and human-centered'
-        ]
+        ],
+        icon: 'Star'
       },
       {
         id: 60,
@@ -805,7 +864,8 @@ export const sessions: Session[] = [
         type: 'title',
         title: 'Thank You!',
         subtitle: 'Questions & Discussion',
-        content: 'Let\'s explore the future of AI together'
+        content: 'Let\'s explore the future of AI together',
+        icon: 'PartyPopper'
       }
     ]
   }
