@@ -14,6 +14,7 @@ export interface SlideContent {
   highlight?: string;
   sessionNumber?: number;
   sessionTitle?: string;
+  icon?: string; // lucide-react icon name
 }
 
 export interface Session {
