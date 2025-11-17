@@ -74,7 +74,7 @@ export default function SlidePresentation() {
   return (
     <div className="relative w-full h-full bg-gray-100">
       {/* Countdown Timer */}
-      <CountdownTimer />
+      <CountdownTimer currentSlideIndex={currentSlideIndex} totalSlides={allSlides.length} />
 
       {/* Main Slide Area */}
       <div className="w-full h-full">
