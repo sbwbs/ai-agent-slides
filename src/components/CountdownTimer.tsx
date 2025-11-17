@@ -14,9 +14,14 @@ export default function CountdownTimer({ currentSlideIndex, totalSlides }: Count
   const [timeLeft, setTimeLeft] = useState(INITIAL_TIME);
   const [isRunning, setIsRunning] = useState(false);
   const [isFlickering, setIsFlickering] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(() => {
+    // Initialize from localStorage, default to true
+    const stored = localStorage.getItem('timerVisible');
+    return stored !== null ? stored === 'true' : true;
+  });
   const intervalRef = useRef<number | null>(null);
   const fadeTimeoutRef = useRef<number | null>(null);
+  const manuallyHiddenRef = useRef(false); // Track if user manually hid the timer
 
   useEffect(() => {
     if (isRunning && timeLeft > 0) {
@@ -43,6 +48,19 @@ export default function CountdownTimer({ currentSlideIndex, totalSlides }: Count
     };
   }, [isRunning, timeLeft]);
 
+  // Initialize manual hide state from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem('timerVisible');
+    if (stored === 'false') {
+      manuallyHiddenRef.current = true;
+    }
+  }, []); // Run only once on mount
+
+  // Persist visibility state to localStorage
+  useEffect(() => {
+    localStorage.setItem('timerVisible', isVisible.toString());
+  }, [isVisible]);
+
   // Handle flickering effect
   useEffect(() => {
     if (timeLeft <= FLICKER_THRESHOLD && timeLeft > 0) {
@@ -58,18 +76,21 @@ export default function CountdownTimer({ currentSlideIndex, totalSlides }: Count
 
   // Handle auto-fade on slide change
   useEffect(() => {
-    // Show timer when slide changes
-    setIsVisible(true);
+    // Only auto-show and auto-fade if user hasn't manually hidden the timer
+    if (!manuallyHiddenRef.current) {
+      // Show timer when slide changes
+      setIsVisible(true);
 
-    // Clear any existing fade timeout
-    if (fadeTimeoutRef.current) {
-      clearTimeout(fadeTimeoutRef.current);
+      // Clear any existing fade timeout
+      if (fadeTimeoutRef.current) {
+        clearTimeout(fadeTimeoutRef.current);
+      }
+
+      // Set new fade timeout
+      fadeTimeoutRef.current = window.setTimeout(() => {
+        setIsVisible(false);
+      }, AUTO_FADE_DELAY);
     }
-
-    // Set new fade timeout
-    fadeTimeoutRef.current = window.setTimeout(() => {
-      setIsVisible(false);
-    }, AUTO_FADE_DELAY);
 
     return () => {
       if (fadeTimeoutRef.current) {
@@ -124,7 +145,10 @@ export default function CountdownTimer({ currentSlideIndex, totalSlides }: Count
   };
 
   const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+    const newVisibility = !isVisible;
+    setIsVisible(newVisibility);
+    // Track manual hide state - set to true when hiding, false when showing
+    manuallyHiddenRef.current = !newVisibility;
     // Clear the auto-fade timeout when manually toggling
     if (fadeTimeoutRef.current) {
       clearTimeout(fadeTimeoutRef.current);
