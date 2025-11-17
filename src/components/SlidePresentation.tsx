@@ -7,6 +7,7 @@ import SectionSlide from './slides/SectionSlide';
 import BulletsSlide from './slides/BulletsSlide';
 import TwoColumnSlide from './slides/TwoColumnSlide';
 import QuoteSlide from './slides/QuoteSlide';
+import CountdownTimer from './CountdownTimer';
 
 export default function SlidePresentation() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -72,6 +73,9 @@ export default function SlidePresentation() {
 
   return (
     <div className="relative w-full h-full bg-gray-100">
+      {/* Countdown Timer */}
+      <CountdownTimer />
+
       {/* Main Slide Area */}
       <div className="w-full h-full">
         <div
