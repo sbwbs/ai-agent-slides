@@ -1,10 +1,13 @@
 import SlidePresentation from './components/SlidePresentation'
+import { LanguageProvider } from './contexts/LanguageContext'
 
 function App() {
   return (
-    <div className="w-full h-full">
-      <SlidePresentation />
-    </div>
+    <LanguageProvider>
+      <div className="w-full h-full">
+        <SlidePresentation />
+      </div>
+    </LanguageProvider>
   )
 }
 

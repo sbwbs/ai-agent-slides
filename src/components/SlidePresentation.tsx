@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, Languages } from 'lucide-react';
 import { allSlides, getSessionForSlide } from '../data/slidesData';
 import { SlideContent } from '../types/slides';
 import TitleSlide from './slides/TitleSlide';
@@ -8,12 +8,16 @@ import BulletsSlide from './slides/BulletsSlide';
 import TwoColumnSlide from './slides/TwoColumnSlide';
 import QuoteSlide from './slides/QuoteSlide';
 import CountdownTimer from './CountdownTimer';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslatedSlide } from '../hooks/useTranslatedSlide';
 
 export default function SlidePresentation() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
+  const { language, toggleLanguage } = useLanguage();
 
-  const currentSlide = allSlides[currentSlideIndex];
+  const originalSlide = allSlides[currentSlideIndex];
+  const currentSlide = useTranslatedSlide(originalSlide);
   const currentSession = getSessionForSlide(currentSlide.id);
 
   const goToNextSlide = useCallback(() => {
@@ -75,6 +79,20 @@ export default function SlidePresentation() {
     <div className="relative w-full h-full bg-gray-100">
       {/* Countdown Timer */}
       <CountdownTimer currentSlideIndex={currentSlideIndex} totalSlides={allSlides.length} />
+
+      {/* Language Toggle */}
+      <div className="fixed top-8 left-8 z-50">
+        <button
+          onClick={toggleLanguage}
+          className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-3 shadow-lg hover:bg-white transition-colors"
+          title="Toggle language / 언어 전환"
+        >
+          <Languages className="w-5 h-5 text-gray-700" />
+          <span className="text-sm font-medium text-gray-700">
+            {language === 'en' ? 'EN' : '한국어'}
+          </span>
+        </button>
+      </div>
 
       {/* Main Slide Area */}
       <div className="w-full h-full">
