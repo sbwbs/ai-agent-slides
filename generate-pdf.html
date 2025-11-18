@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Slides PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #controls {
+            text-align: center;
+            margin-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #5568d3;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        #progress {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .slide {
+            width: 1024px;
+            height: 768px;
+            background: white;
+            margin: 20px auto;
+            padding: 60px 80px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.title-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide.section-slide {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .slide h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .slide h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #667eea;
+        }
+
+        .slide.title-slide h3,
+        .slide.section-slide h3 {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .slide p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .slide ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .slide li {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .slide li:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+        }
+
+        .slide.title-slide li:before,
+        .slide.section-slide li:before {
+            color: white;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 16px 20px;
+            border-left: 4px solid #f59e0b;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .column h4 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .quote-slide {
+            text-align: center;
+            font-style: italic;
+            padding: 100px 120px !important;
+        }
+
+        .quote-slide blockquote {
+            font-size: 32px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #1f2937;
+        }
+
+        .quote-slide .author {
+            font-size: 24px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .session-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h2>AI Agent Slides PDF Generator</h2>
+        <p>Total Slides: <span id="slideCount">0</span></p>
+        <button id="generateBtn" onclick="generatePDF()">Generate PDF</button>
+        <div id="progress"></div>
+    </div>
+    <div id="slides-container"></div>
+
+    <script type="module">
+        // Slides data embedded
+        const sessions = [SLIDES_DATA_PLACEHOLDER];
+
+        const allSlides = sessions.flatMap(session => session.slides);
+
+        function renderSlide(slide, session) {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = `slide ${slide.type}-slide`;
+
+            let html = '';
+
+            switch(slide.type) {
+                case 'title':
+                    html = `
+                        <h1>${slide.title}</h1>
+                        ${slide.subtitle ? `<h2>${slide.subtitle}</h2>` : ''}
+                        ${slide.content ? `<p>${slide.content}</p>` : ''}
+                    `;
+                    break;
+
+                case 'section':
+                    html = `
+                        ${slide.sessionNumber !== undefined ? `<div class="session-badge">Session ${slide.sessionNumber}</div>` : ''}
+                        <h1>${slide.title}</h1>
+                        ${slide.sessionTitle ? `<h2>${slide.sessionTitle}</h2>` : ''}
+                    `;
+                    break;
+
+                case 'bullets':
+                    html = `
+                        <h2>${slide.title}</h2>
+                        ${slide.subtitle ? `<h3>${slide.subtitle}</h3>` : ''}
+                        <ul>
+                            ${slide.bullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                        </ul>
+                        ${slide.highlight ? `<div class="highlight">${slide.highlight}</div>` : ''}
+                    `;
+                    break;
+
+                case 'two-column':
+                    html = `
+                        <h2>${slide.title}</h2>
+                        ${slide.subtitle ? `<h3>${slide.subtitle}</h3>` : ''}
+                        <div class="two-column">
+                            <div class="column">
+                                <h4>${slide.leftContent}</h4>
+                                <ul>
+                                    ${slide.leftBullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h4>${slide.rightContent}</h4>
+                                <ul>
+                                    ${slide.rightBullets.map(bullet => `<li>${bullet}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        ${slide.highlight ? `<div class="highlight">${slide.highlight}</div>` : ''}
+                    `;
+                    break;
+
+                case 'quote':
+                    slideDiv.className += ' quote-slide';
+                    html = `
+                        <blockquote>"${slide.quote}"</blockquote>
+                        ${slide.author ? `<div class="author">— ${slide.author}</div>` : ''}
+                    `;
+                    break;
+            }
+
+            slideDiv.innerHTML = html;
+            return slideDiv;
+        }
+
+        function initSlides() {
+            const container = document.getElementById('slides-container');
+            document.getElementById('slideCount').textContent = allSlides.length;
+
+            sessions.forEach(session => {
+                session.slides.forEach(slide => {
+                    container.appendChild(renderSlide(slide, session));
+                });
+            });
+        }
+
+        window.generatePDF = async function() {
+            const btn = document.getElementById('generateBtn');
+            const progress = document.getElementById('progress');
+
+            btn.disabled = true;
+            progress.textContent = 'Initializing PDF generation...';
+
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF({
+                orientation: 'landscape',
+                unit: 'px',
+                format: [1024, 768]
+            });
+
+            const slides = document.querySelectorAll('.slide');
+
+            for (let i = 0; i < slides.length; i++) {
+                progress.textContent = `Processing slide ${i + 1} of ${slides.length}...`;
+
+                try {
+                    const canvas = await html2canvas(slides[i], {
+                        scale: 2,
+                        useCORS: true,
+                        logging: false,
+                        backgroundColor: '#ffffff'
+                    });
+
+                    const imgData = canvas.toDataURL('image/png');
+
+                    if (i > 0) {
+                        pdf.addPage();
+                    }
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, 1024, 768);
+                } catch (error) {
+                    console.error(`Error processing slide ${i + 1}:`, error);
+                }
+            }
+
+            progress.textContent = 'Saving PDF...';
+            pdf.save('ai-agent-slides.pdf');
+
+            progress.textContent = 'PDF generated successfully!';
+            btn.disabled = false;
+        };
+
+        // Initialize on load
+        initSlides();
+    </script>
+</body>
+</html>
