@@ -16,6 +16,44 @@ export const sessions: Session[] = [
       },
       {
         id: 1,
+        type: 'bullets',
+        title: 'About Me',
+        subtitle: 'Wonbae Suh',
+        bullets: [
+          'Background: King\'s College London (History & War Studies, technology & cybersecurity focus)',
+          'Deep experience in generative AI, LLM systems, RAG pipelines, and AI agents',
+          'Career built on first-principles thinking, self-education, and hands-on experimentation',
+          'Professional Identity: Forward Deployment Engineer → AI Solution Architect trajectory',
+          'Known for translating complex AI systems into practical, deployable solutions for enterprise use',
+          'Focus: Design, debug, and deploy AI agent systems end-to-end'
+        ],
+        highlight: 'Bridging customer needs → technical implementation',
+        icon: 'User'
+      },
+      {
+        id: 2,
+        type: 'two-column',
+        title: 'About Sendbird & My Role',
+        leftContent: 'Sendbird Overview',
+        leftBullets: [
+          'Originally: Global chat API platform for messaging, calls, and support',
+          'Today: AI Agent Platform for enterprises',
+          'Reasoning-capable, tool-integrated AI agents',
+          'Production-grade agent orchestration',
+          'Key Customers: Coupang, Hanssem, Fursys/Sidiz, Woowa Brothers'
+        ],
+        rightContent: 'My Role as FDE',
+        rightBullets: [
+          'Own customer deployments: POC → production',
+          'Build Actionbooks & integrate customer APIs',
+          'Analyze logs & ensure real-world reliability',
+          'Collaborate with PMs, engineering, and customer dev teams',
+          'Act as field engineer AND AI architect'
+        ],
+        icon: 'Building2'
+      },
+      {
+        id: 3,
         type: 'section',
         title: 'Session Overview',
         sessionNumber: 0,
@@ -23,7 +61,7 @@ export const sessions: Session[] = [
         icon: 'Presentation'
       },
       {
-        id: 2,
+        id: 4,
         type: 'bullets',
         title: 'Our Journey Today',
         bullets: [
@@ -43,7 +81,7 @@ export const sessions: Session[] = [
     title: "Foundations of AI and LLMs",
     slides: [
       {
-        id: 3,
+        id: 5,
         type: 'section',
         title: 'Foundations of AI and LLMs',
         sessionNumber: 1,
@@ -51,7 +89,7 @@ export const sessions: Session[] = [
         icon: 'Brain'
       },
       {
-        id: 4,
+        id: 6,
         type: 'bullets',
         title: 'AI in a Nutshell',
         bullets: [
@@ -63,7 +101,7 @@ export const sessions: Session[] = [
         icon: 'Layers'
       },
       {
-        id: 5,
+        id: 7,
         type: 'bullets',
         title: 'What is a Generative AI/LLM?',
         bullets: [
@@ -75,7 +113,7 @@ export const sessions: Session[] = [
         icon: 'MessagesSquare'
       },
       {
-        id: 6,
+        id: 8,
         type: 'two-column',
         title: 'Scale and Capability',
         leftContent: 'Why LLMs Are Powerful',
@@ -103,7 +141,7 @@ export const sessions: Session[] = [
     title: "Early AI and My Journey",
     slides: [
       {
-        id: 7,
+        id: 9,
         type: 'section',
         title: 'Early AI: From ELIZA to Now',
         sessionNumber: 2,
@@ -111,7 +149,7 @@ export const sessions: Session[] = [
         icon: 'History'
       },
       {
-        id: 8,
+        id: 10,
         type: 'bullets',
         title: 'The Evolution of AI',
         bullets: [
@@ -125,7 +163,7 @@ export const sessions: Session[] = [
         icon: 'Clock'
       },
       {
-        id: 9,
+        id: 11,
         type: 'section',
         title: 'My Early Journey in LLMs',
         sessionNumber: 2,
@@ -133,7 +171,7 @@ export const sessions: Session[] = [
         icon: 'Rocket'
       },
       {
-        id: 10,
+        id: 12,
         type: 'bullets',
         title: 'First Experiments',
         bullets: [
@@ -146,7 +184,7 @@ export const sessions: Session[] = [
         icon: 'FlaskConical'
       },
       {
-        id: 11,
+        id: 13,
         type: 'bullets',
         title: 'Discovering AI Agents',
         bullets: [
@@ -159,7 +197,7 @@ export const sessions: Session[] = [
         icon: 'Bot'
       },
       {
-        id: 12,
+        id: 14,
         type: 'bullets',
         title: 'Workflows & Chain of Thought',
         bullets: [
@@ -180,7 +218,7 @@ export const sessions: Session[] = [
     title: "Applied Work at SendBird",
     slides: [
       {
-        id: 13,
+        id: 15,
         type: 'section',
         title: 'Applied Work at SendBird',
         sessionNumber: 3,
@@ -188,7 +226,7 @@ export const sessions: Session[] = [
         icon: 'MessageSquare'
       },
       {
-        id: 14,
+        id: 16,
         type: 'bullets',
         title: 'SendBird AI Chatbot',
         subtitle: 'Enhancing customer engagement with AI',
@@ -201,7 +239,7 @@ export const sessions: Session[] = [
         icon: 'BotMessageSquare'
       },
       {
-        id: 15,
+        id: 17,
         type: 'bullets',
         title: 'Key Feature: Grounded in Facts',
         bullets: [
@@ -214,7 +252,7 @@ export const sessions: Session[] = [
         icon: 'FileCheck'
       },
       {
-        id: 16,
+        id: 18,
         type: 'two-column',
         title: 'Mitigating Hallucinations',
         leftContent: 'Problem',
@@ -234,7 +272,7 @@ export const sessions: Session[] = [
         icon: 'ShieldCheck'
       },
       {
-        id: 17,
+        id: 19,
         type: 'bullets',
         title: 'Lessons Learned',
         bullets: [
@@ -248,7 +286,7 @@ export const sessions: Session[] = [
         icon: 'Lightbulb'
       },
       {
-        id: 18,
+        id: 20,
         type: 'bullets',
         title: 'SendBird AI Agent for Customer Support',
         subtitle: 'Evolution from RAG Chatbot to Action-Driven Agents',
@@ -271,7 +309,7 @@ export const sessions: Session[] = [
     title: "How LLMs Work",
     slides: [
       {
-        id: 19,
+        id: 21,
         type: 'section',
         title: 'How LLMs Work',
         sessionNumber: 4,
@@ -279,7 +317,7 @@ export const sessions: Session[] = [
         icon: 'Cpu'
       },
       {
-        id: 20,
+        id: 22,
         type: 'bullets',
         title: 'Training and "Knowledge"',
         bullets: [
@@ -292,7 +330,7 @@ export const sessions: Session[] = [
         icon: 'GraduationCap'
       },
       {
-        id: 21,
+        id: 23,
         type: 'bullets',
         title: 'The Black Box and Emergence',
         bullets: [
@@ -306,7 +344,7 @@ export const sessions: Session[] = [
         icon: 'Box'
       },
       {
-        id: 22,
+        id: 24,
         type: 'bullets',
         title: 'Why LLMs Make Errors',
         bullets: [
@@ -328,7 +366,7 @@ export const sessions: Session[] = [
     title: "Augmenting LLMs",
     slides: [
       {
-        id: 23,
+        id: 25,
         type: 'section',
         title: 'Augmenting LLMs',
         sessionNumber: 5,
@@ -336,7 +374,7 @@ export const sessions: Session[] = [
         icon: 'Database'
       },
       {
-        id: 24,
+        id: 26,
         type: 'bullets',
         title: 'Retrieval-Augmented Generation (RAG)',
         subtitle: 'Giving the model a smart library to consult',
@@ -349,7 +387,7 @@ export const sessions: Session[] = [
         icon: 'BookOpen'
       },
       {
-        id: 25,
+        id: 27,
         type: 'bullets',
         title: 'What Are Embeddings?',
         bullets: [
@@ -363,7 +401,7 @@ export const sessions: Session[] = [
         icon: 'Binary'
       },
       {
-        id: 26,
+        id: 28,
         type: 'bullets',
         title: 'Vector Databases & Semantic Search',
         bullets: [
@@ -376,7 +414,7 @@ export const sessions: Session[] = [
         icon: 'Search'
       },
       {
-        id: 27,
+        id: 29,
         type: 'bullets',
         title: 'Integration with LLM Prompts',
         bullets: [
@@ -398,7 +436,7 @@ export const sessions: Session[] = [
     title: "Extending LLMs: Tools and Agents",
     slides: [
       {
-        id: 28,
+        id: 30,
         type: 'section',
         title: 'Extending LLMs',
         sessionNumber: 6,
@@ -406,7 +444,7 @@ export const sessions: Session[] = [
         icon: 'Wrench'
       },
       {
-        id: 29,
+        id: 31,
         type: 'two-column',
         title: 'Why Tools?',
         leftContent: 'LLM Limitations',
@@ -426,7 +464,7 @@ export const sessions: Session[] = [
         icon: 'Settings'
       },
       {
-        id: 30,
+        id: 32,
         type: 'bullets',
         title: 'From Static Model to Interactive Agent',
         bullets: [
@@ -439,7 +477,7 @@ export const sessions: Session[] = [
         icon: 'Zap'
       },
       {
-        id: 31,
+        id: 33,
         type: 'two-column',
         title: 'Evolution: LLM Workflows vs LLM Agents',
         leftContent: 'Traditional LLM Workflows',
@@ -461,7 +499,7 @@ export const sessions: Session[] = [
         icon: 'Workflow'
       },
       {
-        id: 32,
+        id: 34,
         type: 'bullets',
         title: 'Native Agent SDKs',
         subtitle: 'OpenAI, Anthropic, Gemini',
@@ -476,7 +514,7 @@ export const sessions: Session[] = [
         icon: 'Code'
       },
       {
-        id: 33,
+        id: 35,
         type: 'bullets',
         title: 'Model Context Protocol (MCP)',
         subtitle: 'Introduced by Anthropic, late 2024',
@@ -491,7 +529,7 @@ export const sessions: Session[] = [
         icon: 'Plug'
       },
       {
-        id: 34,
+        id: 36,
         type: 'bullets',
         title: 'Agent-to-Agent Protocol (A2A)',
         subtitle: 'Announced by Google, 2025',
@@ -506,7 +544,7 @@ export const sessions: Session[] = [
         icon: 'Network'
       },
       {
-        id: 35,
+        id: 37,
         type: 'bullets',
         title: 'Core Components of AI Agents',
         subtitle: 'Building Blocks of Autonomous Systems',
@@ -523,7 +561,7 @@ export const sessions: Session[] = [
         icon: 'Boxes'
       },
       {
-        id: 36,
+        id: 38,
         type: 'bullets',
         title: 'Agentic Compound Systems',
         bullets: [
@@ -545,7 +583,7 @@ export const sessions: Session[] = [
     title: "LLMs in Education",
     slides: [
       {
-        id: 37,
+        id: 39,
         type: 'section',
         title: 'LLMs in Education',
         sessionNumber: 7,
@@ -553,7 +591,7 @@ export const sessions: Session[] = [
         icon: 'School'
       },
       {
-        id: 38,
+        id: 40,
         type: 'bullets',
         title: 'Student Adoption',
         bullets: [
@@ -566,7 +604,7 @@ export const sessions: Session[] = [
         icon: 'Users'
       },
       {
-        id: 39,
+        id: 41,
         type: 'two-column',
         title: 'The Double-Edged Sword',
         leftContent: 'Concerns',
@@ -588,7 +626,7 @@ export const sessions: Session[] = [
         icon: 'Swords'
       },
       {
-        id: 40,
+        id: 42,
         type: 'bullets',
         title: 'Teachers\' Perspectives',
         subtitle: 'Pew Survey, late 2023',
@@ -602,7 +640,7 @@ export const sessions: Session[] = [
         icon: 'UserCheck'
       },
       {
-        id: 41,
+        id: 43,
         type: 'bullets',
         title: 'The Path Forward: AI Literacy',
         bullets: [
@@ -624,7 +662,7 @@ export const sessions: Session[] = [
     title: "LLMs in the Workplace",
     slides: [
       {
-        id: 42,
+        id: 44,
         type: 'section',
         title: 'LLMs in the Workplace',
         sessionNumber: 8,
@@ -632,7 +670,7 @@ export const sessions: Session[] = [
         icon: 'Briefcase'
       },
       {
-        id: 43,
+        id: 45,
         type: 'bullets',
         title: 'Widespread Adoption',
         bullets: [
@@ -646,7 +684,7 @@ export const sessions: Session[] = [
         icon: 'Building'
       },
       {
-        id: 44,
+        id: 46,
         type: 'bullets',
         title: 'Productivity Boosts',
         subtitle: 'MIT Study, 2023',
@@ -660,7 +698,7 @@ export const sessions: Session[] = [
         icon: 'TrendingUp'
       },
       {
-        id: 45,
+        id: 47,
         type: 'bullets',
         title: 'New Workflows and Roles',
         bullets: [
@@ -674,7 +712,7 @@ export const sessions: Session[] = [
         icon: 'Users2'
       },
       {
-        id: 46,
+        id: 48,
         type: 'two-column',
         title: 'Workplace Challenges',
         leftContent: 'Concerns',
@@ -696,7 +734,7 @@ export const sessions: Session[] = [
         icon: 'ShieldAlert'
       },
       {
-        id: 47,
+        id: 49,
         type: 'bullets',
         title: 'Overall Impact',
         bullets: [
@@ -718,7 +756,7 @@ export const sessions: Session[] = [
     title: "The Future",
     slides: [
       {
-        id: 48,
+        id: 50,
         type: 'section',
         title: 'What Lies Ahead',
         sessionNumber: 9,
@@ -726,7 +764,7 @@ export const sessions: Session[] = [
         icon: 'Telescope'
       },
       {
-        id: 49,
+        id: 51,
         type: 'bullets',
         title: 'Even More Capable Models',
         bullets: [
@@ -739,7 +777,7 @@ export const sessions: Session[] = [
         icon: 'Gauge'
       },
       {
-        id: 50,
+        id: 52,
         type: 'bullets',
         title: 'Multimodal and Versatile AI',
         bullets: [
@@ -753,7 +791,7 @@ export const sessions: Session[] = [
         icon: 'MonitorSmartphone'
       },
       {
-        id: 51,
+        id: 53,
         type: 'bullets',
         title: 'Agent Ecosystems',
         bullets: [
@@ -767,7 +805,7 @@ export const sessions: Session[] = [
         icon: 'Globe'
       },
       {
-        id: 52,
+        id: 54,
         type: 'bullets',
         title: 'Ethics, Regulation, and Society',
         bullets: [
@@ -780,7 +818,7 @@ export const sessions: Session[] = [
         icon: 'Scale3d'
       },
       {
-        id: 53,
+        id: 55,
         type: 'bullets',
         title: 'AI for Societal Challenges',
         bullets: [
@@ -794,13 +832,13 @@ export const sessions: Session[] = [
         icon: 'HeartHandshake'
       },
       {
-        id: 54,
+        id: 56,
         type: 'quote',
         quote: 'The illiterate of the 21st century will not be those who cannot read and write, but those who cannot learn, unlearn, and relearn.',
         author: 'Alvin Toffler'
       },
       {
-        id: 55,
+        id: 57,
         type: 'bullets',
         title: 'Continuous Learning for Humans',
         bullets: [
@@ -822,7 +860,7 @@ export const sessions: Session[] = [
     title: "Key Takeaways",
     slides: [
       {
-        id: 56,
+        id: 58,
         type: 'section',
         title: 'Key Takeaways and Advice',
         sessionNumber: 10,
@@ -830,7 +868,7 @@ export const sessions: Session[] = [
         icon: 'Compass'
       },
       {
-        id: 57,
+        id: 59,
         type: 'bullets',
         title: '1. Stick to Fundamentals',
         bullets: [
@@ -843,7 +881,7 @@ export const sessions: Session[] = [
         icon: 'Anchor'
       },
       {
-        id: 58,
+        id: 60,
         type: 'bullets',
         title: '2. Learn Step by Step',
         bullets: [
@@ -856,7 +894,7 @@ export const sessions: Session[] = [
         icon: 'TrendingUp'
       },
       {
-        id: 59,
+        id: 61,
         type: 'bullets',
         title: '3. Hands-On Experimentation',
         bullets: [
@@ -870,7 +908,7 @@ export const sessions: Session[] = [
         icon: 'Hammer'
       },
       {
-        id: 60,
+        id: 62,
         type: 'bullets',
         title: '4. Stay Curious and Keep Learning',
         bullets: [
@@ -883,7 +921,7 @@ export const sessions: Session[] = [
         icon: 'Sparkles'
       },
       {
-        id: 61,
+        id: 63,
         type: 'bullets',
         title: '5. Be Ready to Unlearn/Adapt',
         bullets: [
@@ -896,7 +934,7 @@ export const sessions: Session[] = [
         icon: 'RotateCcw'
       },
       {
-        id: 62,
+        id: 64,
         type: 'bullets',
         title: '6. Ethics and Purpose',
         bullets: [
@@ -910,7 +948,7 @@ export const sessions: Session[] = [
         icon: 'Heart'
       },
       {
-        id: 63,
+        id: 65,
         type: 'bullets',
         title: 'Final Thoughts',
         bullets: [
@@ -923,13 +961,13 @@ export const sessions: Session[] = [
         icon: 'Star'
       },
       {
-        id: 64,
+        id: 66,
         type: 'quote',
         quote: 'The AI revolution is not just something happening to us; it\'s something we are all co-creating.',
         author: ''
       },
       {
-        id: 65,
+        id: 67,
         type: 'title',
         title: 'Thank You!',
         subtitle: 'Questions & Discussion',
